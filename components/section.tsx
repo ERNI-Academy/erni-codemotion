@@ -8,7 +8,7 @@ interface SectionProps {
   buttonLink: string;
   imageSrc: string;
   imageAlt: string;
-  imagePosition?: 'left' | 'right'; // Nuevo parámetro opcional
+  imagePosition?: 'left' | 'right';
 }
 
 export default function Section({
@@ -19,9 +19,8 @@ export default function Section({
   buttonLink,
   imageSrc,
   imageAlt,
-  imagePosition = 'right' // Por defecto la imagen va a la derecha
+  imagePosition = 'right'
 }: SectionProps) {
-  // Componente para el contenido de texto
   const TextContent = () => (
     <div className="space-y-6">
       <h2 
@@ -52,7 +51,6 @@ export default function Section({
     </div>
   );
 
-  // Componente para la imagen
   const ImageContent = () => (
     <div className="relative">
       <div className="relative overflow-hidden rounded-lg shadow-lg">

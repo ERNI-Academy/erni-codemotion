@@ -2,8 +2,7 @@ import React from 'react';
 
 export default function FooterBanner() {
   return (
-    <section className="relative w-full min-h-[600px] bg-[#033778] overflow-hidden">
-      {/* Fondo con SVG */}
+    <section className="relative w-full py-16 px-8 bg-[#033778] overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -13,7 +12,6 @@ export default function FooterBanner() {
         }}
       />
       
-      {/* Formas curvas translúcidas superpuestas */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-1/2 h-full">
           <div className="absolute top-20 right-10 w-96 h-96 bg-white opacity-15 rounded-full transform rotate-12"></div>
@@ -21,11 +19,9 @@ export default function FooterBanner() {
         </div>
       </div>
       
-      {/* Contenido principal */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[500px]">
-          {/* Contenido de texto */}
-          <div className="space-y-8">
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 items-end">
+          <div className="space-y-7 lg:col-span-3">
             <div className="space-y-4">
               <h1 
                 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
@@ -53,17 +49,20 @@ export default function FooterBanner() {
             </p>
           </div>
           
-          {/* Botón CTA */}
-          <div className="flex justify-end items-end">
-            <button 
-              className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
+          <div className="flex justify-end lg:col-span-1">
+            <a
+              href="https://www.betterask.erni/es-en/contact-us/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-black px-12 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg flex items-center justify-center"
               style={{ 
                 fontFamily: 'Source Sans Pro, sans-serif',
-                fontWeight: 600
+                fontWeight: 600,
+                minWidth: '200px'
               }}
             >
               Contact Us →
-            </button>
+            </a>
           </div>
         </div>
       </div>

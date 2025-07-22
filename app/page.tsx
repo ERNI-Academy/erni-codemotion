@@ -15,7 +15,7 @@ export default function Home() {
         paragraph1="It has been a pleasure to experiment with you by combining technologies such as AI, Robotics, Frontend, and Cybersecurity."
         paragraph2="To thank you, we have prepared a small game so you can find the original of your caricature and discover how our AI represented your photo. Enjoy it!"
         buttonText="Find your picture →"
-        buttonLink="/about"
+        buttonLink="/whoIsWho"
         imageSrc="/caricatureImage.png"
         imageAlt="Team collaboration - Woman and man working together on laptop"
         imagePosition="right"
