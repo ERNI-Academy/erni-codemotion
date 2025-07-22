@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import AppBarComponent from "@/components/appBar";
 import VideoBanner from "@/components/VideoBanner";
 import Section from "@/components/section";
+import FooterBanner from "@/components/footerBanner";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         imageAlt="Team collaboration - Woman and man working together on laptop"
         imagePosition="right"
       />
+      <FooterBanner />
     </div>
   );
 }
