@@ -1,7 +1,15 @@
 export default function WhoIsWho() {
   return (
-    <div>
-      <h1>Hola mundo</h1>
+    <div className="flex items-center justify-center min-h-screen bg-white">
+      <h1
+        className="text-4xl md:text-5xl font-semibold text-[#033778] leading-tight"
+        style={{
+          fontFamily: 'Source Sans Pro, sans-serif',
+          fontWeight: 600
+        }}
+      >
+        Who is who game
+      </h1>
     </div>
   );
 } 
