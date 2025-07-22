@@ -16,7 +16,7 @@ export default function Home() {
         paragraph2="To thank you, we have prepared a small game so you can find the original of your caricature and discover how our AI represented your photo. Enjoy it!"
         buttonText="Find your picture →"
         buttonLink="/whoIsWho"
-        imageSrc="/caricatureImage.png"
+        imageSrc="/robotImage.png"
         imageAlt="Team collaboration - Woman and man working together on laptop"
         imagePosition="right"
       />
