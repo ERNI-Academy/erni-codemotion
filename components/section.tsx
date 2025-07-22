@@ -26,7 +26,7 @@ export default function Section({
       <h2 
         className="text-4xl md:text-5xl font-semibold text-[#033778] leading-tight"
         style={{ 
-          fontFamily: 'Source Sans Pro, sans-serif',
+          fontFamily: 'var(--font-source-sans-pro), sans-serif',
           fontWeight: 600
         }}
       >
@@ -40,9 +40,9 @@ export default function Section({
       
       <a
         href={buttonLink}
-        className="inline-block bg-[#033778] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#022a5e] transition-colors duration-300"
+        className="inline-block bg-[#033778] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#022a5e] transition-colors duration-300"
         style={{ 
-          fontFamily: 'Source Sans Pro, sans-serif',
+          fontFamily: 'var(--font-source-sans-pro), sans-serif',
           fontWeight: 600
         }}
       >

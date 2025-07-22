@@ -4,7 +4,7 @@ export default function WhoIsWho() {
       <h1
         className="text-4xl md:text-5xl font-semibold text-[#033778] leading-tight"
         style={{
-          fontFamily: 'Source Sans Pro, sans-serif',
+          fontFamily: 'var(--font-source-sans-pro), sans-serif',
           fontWeight: 600
         }}
       >

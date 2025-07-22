@@ -28,7 +28,7 @@ export default function VideoBanner() {
           className="text-white text-5xl md:text-7xl font-semibold pl-8 pb-8"
           style={{ 
             lineHeight: 1.1,
-            fontFamily: 'Source Sans Pro, sans-serif',
+            fontFamily: 'var(--font-source-sans-pro), sans-serif',
             fontWeight: 600
           }}
         >
