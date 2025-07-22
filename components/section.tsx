@@ -1,0 +1,69 @@
+import React from 'react';
+
+interface SectionProps {
+  title: string;
+  paragraph1: string;
+  paragraph2: string;
+  buttonText: string;
+  buttonLink: string;
+  imageSrc: string;
+  imageAlt: string;
+}
+
+export default function Section({
+  title,
+  paragraph1,
+  paragraph2,
+  buttonText,
+  buttonLink,
+  imageSrc,
+  imageAlt
+}: SectionProps) {
+  return (
+    <section className="w-full py-16 px-8 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Columna izquierda - Texto */}
+          <div className="space-y-6">
+            <h2 
+              className="text-4xl md:text-5xl font-semibold text-[#033778] leading-tight"
+              style={{ 
+                fontFamily: 'Source Sans Pro, sans-serif',
+                fontWeight: 600
+              }}
+            >
+              {title}
+            </h2>
+            
+            <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
+              <p>{paragraph1}</p>
+              <p>{paragraph2}</p>
+            </div>
+            
+            <a
+              href={buttonLink}
+              className="inline-block bg-[#033778] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#022a5e] transition-colors duration-300"
+              style={{ 
+                fontFamily: 'Source Sans Pro, sans-serif',
+                fontWeight: 600
+              }}
+            >
+              {buttonText}
+            </a>
+          </div>
+          
+          {/* Columna derecha - Imagen */}
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-lg shadow-lg">
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+} 

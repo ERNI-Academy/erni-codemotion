@@ -23,7 +23,6 @@ export default function VideoBanner() {
       />
       <div
         className="absolute left-0 bottom-0 w-full flex items-end z-[2]"
-        style={{ height: '33%' }}
       >
         <h1
           className="text-white text-5xl md:text-7xl font-semibold pl-8 pb-8"
