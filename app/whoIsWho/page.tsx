@@ -74,7 +74,7 @@ export default function WhoIsWho() {
       'DANIELA.png', 'DIEGO.png', 'e0myxex2pnrmc0cpxaetv8068m.png',
       'e1zr0jcwcdrme0cpxn5a37eyec.png', 'eewcct0d0drmc0cpxmwv9hpv3m.png',
       'egegdrrpq5rme0cpx6k9a0yhww.png', 'ELENA.png', 'ELENA2.png', 'ELLA.png',
-      'ERNI.png', 'ESTHER.png', 'f6xm91vradrme0cpxjybecsm30.png',
+      'ESTHER.png', 'f6xm91vradrme0cpxjybecsm30.png',
       'fd7c00x031rmc0cpxs6s6s0jsw.png', 'ff1yfydx4nrma0cpxn9td0b3bg.png',
       'FULGENCIO.png', 'ga00qy8wdsrme0cpxrhap0tcww.png', 'gdqr9pgkfsrmc0cpxs1s2pdcd0.png',
       'gptwrf1f2xrmc0cpxnztv8kgfr.png', 'gynjvnym15rma0cpx6c8s786mr.png',
