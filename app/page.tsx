@@ -10,13 +10,14 @@ export default function Home() {
       <AppBarComponent />
       <VideoBanner />
       <Section
-        title="better ask ERNI"
-        paragraph1="We pave the way to the digital tomorrow. We are experts in innovation, technology, software and digitizing business processes."
-        paragraph2="Our expertise in technologies and methods, combined with our understanding of customer domains, enables us to connect the physical and digital worlds. This makes us the ideal consultant. We are happy to help."
-        buttonText="Find out more about us →"
+        title="Thank you for visiting us in Codemotion 2025"
+        paragraph1="It has been a pleasure to experiment with you by combining technologies such as AI, Robotics, Frontend, and Cybersecurity."
+        paragraph2="To thank you, we have prepared a small game so you can find the original of your caricature and discover how our AI represented your photo. Enjoy it!"
+        buttonText="Find your picture →"
         buttonLink="/about"
-        imageSrc="/team-collaboration.jpg"
+        imageSrc="/caricatureImage.png"
         imageAlt="Team collaboration - Woman and man working together on laptop"
+        imagePosition="right"
       />
     </div>
   );
