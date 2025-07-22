@@ -2,8 +2,6 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import IconButton from '@mui/material/IconButton';
-import Avatar from '@mui/material/Avatar';
 
 export default function AppBarComponent() {
   return (
