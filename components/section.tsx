@@ -40,7 +40,7 @@ export default function Section({
       
       <a
         href={buttonLink}
-        className="inline-block bg-[#033778] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#022a5e] transition-colors duration-300"
+        className="inline-block bg-[#033778] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#022a5e] transition-colors duration-300"
         style={{ 
           fontFamily: 'Source Sans Pro, sans-serif',
           fontWeight: 600
@@ -64,21 +64,19 @@ export default function Section({
   );
 
   return (
-    <section className="w-full py-16 px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {imagePosition === 'left' ? (
-            <>
-              <ImageContent />
-              <TextContent />
-            </>
-          ) : (
-            <>
-              <TextContent />
-              <ImageContent />
-            </>
-          )}
-        </div>
+    <section className="w-full py-16 px-12 bg-white">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {imagePosition === 'left' ? (
+          <>
+            <ImageContent />
+            <TextContent />
+          </>
+        ) : (
+          <>
+            <TextContent />
+            <ImageContent />
+          </>
+        )}
       </div>
     </section>
   );
