@@ -13,14 +13,16 @@ import {
   Paper,
   Button,
   Fade,
-  Slide
+  Slide,
+  Fab
 } from '@mui/material';
 import { 
   ZoomIn,
   Download,
   Close,
   ArrowBack,
-  Cancel
+  Cancel,
+  Refresh
 } from '@mui/icons-material';
 import AppBarComponent from "@/components/appBar";
 import { caricaturesData, CaricatureFeatures } from "@/data/imagesData";
@@ -152,6 +154,25 @@ export default function WhoIsWho() {
     setFilteredImages(images);
   };
 
+  const handleResetFilters = () => {
+    setQuestionModalOpen(false);
+    setCurrentQuestionIndex(0);
+    setAnswers([]);
+    setFilteredImages(images);
+  };
+
+  const handleRestartSequence = () => {
+    setQuestionModalOpen(false);
+    setCurrentQuestionIndex(0);
+    setAnswers([]);
+    setFilteredImages(images);
+    
+    // Reiniciar la secuencia de modales después de un breve delay
+    setTimeout(() => {
+      setQuestionModalOpen(true);
+    }, 300);
+  };
+
   const currentQuestion = questions[currentQuestionIndex];
 
   return (
@@ -168,9 +189,25 @@ export default function WhoIsWho() {
           }}>
             Quién es quién
           </Typography>
-          <Typography variant="h6" color="text.secondary" gutterBottom>
+          <Button
+            variant="text"
+            onClick={handleRestartSequence}
+            sx={{
+              color: 'text.secondary',
+              fontSize: '1.25rem',
+              fontWeight: 400,
+              textTransform: 'none',
+              p: 1,
+              borderRadius: 2,
+              '&:hover': {
+                backgroundColor: 'rgba(33, 150, 243, 0.08)',
+                color: 'primary.main'
+              },
+              transition: 'all 0.2s ease-in-out'
+            }}
+          >
             Encuentra tu caricatura
-          </Typography>
+          </Button>
           <Typography variant="body1" color="primary" sx={{ mt: 2 }}>
             {filteredImages.length} caricaturas
           </Typography>
@@ -268,6 +305,27 @@ export default function WhoIsWho() {
         )}
       </Container>
 
+      {/* Botón flotante para resetear filtros */}
+      {answers.length > 0 && (
+        <Fab
+          color="primary"
+          aria-label="reset filters"
+          onClick={handleResetFilters}
+          sx={{
+            position: 'fixed',
+            bottom: 24,
+            right: 24,
+            zIndex: 1000,
+            boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+            '&:hover': {
+              boxShadow: '0 6px 25px rgba(0,0,0,0.2)'
+            }
+          }}
+        >
+          <Refresh />
+        </Fab>
+      )}
+
       {/* Modal de preguntas */}
       <Modal
         open={questionModalOpen}
@@ -277,7 +335,7 @@ export default function WhoIsWho() {
           justifyContent: 'center',
           p: 2,
           backdropFilter: 'blur(8px)',
-          backgroundColor: 'rgba(0, 0, 0, 0.3)'
+          backgroundColor: 'transparent'
         }}
       >
         <Paper
