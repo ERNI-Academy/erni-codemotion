@@ -6,11 +6,11 @@ export default function FooterBanner() {
       <div 
         className="absolute inset-0 bg-cover bg-center mx-12"
         style={{
-          backgroundImage: 'url(/footerPicture.jpg)'
+          backgroundImage: 'url(/footerImage.jpg)'
         }}
       />
       <div 
-        className="absolute inset-0 mx-12 bg-[#033778] opacity-30"
+        className="absolute inset-0 mx-12 bg-[#033778] opacity-10"
       />
             <div className="relative z-10 px-12 mx-auto h-full">
         <div className="grid grid-cols-1 lg:grid-cols-10 h-full gap-6 lg:gap-0">
@@ -33,24 +33,12 @@ export default function FooterBanner() {
                 <br />
                 be part of challenging projects to go even further.
               </p>
-              
-              <div className="flex justify-start lg:hidden">
-                <a
-                  href="https://www.betterask.erni/es-en/contact-us/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white text-black px-6 md:px-8 py-3 rounded-full font-semibold text-base md:text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg flex items-center justify-center min-w-[200px] md:min-w-[280px] whitespace-nowrap"
-                  style={{ fontFamily: 'var(--font-source-sans-pro), sans-serif' }}
-                >
-                  View available opportunities →
-                </a>
-              </div>
             </div>
           </div>
           
           <div className="hidden lg:flex lg:col-span-3 items-end justify-end">
             <a
-              href="https://www.betterask.erni/es-en/contact-us/"
+              href="https://www.betterask.erni/es-en/job-opportunities/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-black px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg flex items-center justify-center min-w-[280px] whitespace-nowrap"

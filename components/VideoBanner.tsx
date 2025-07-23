@@ -18,7 +18,7 @@ export default function VideoBanner() {
         className="absolute top-0 left-0 w-full h-full pointer-events-auto z-[1]"
         style={{
           backgroundColor: '#033778',
-          opacity: 0.3
+          opacity: 0
         }}
       />
       <div
