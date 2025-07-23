@@ -1,7 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
-import { useFrame } from '@react-three/fiber';
+import { useRef } from 'react';
 import { Text, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -18,27 +17,14 @@ interface CharacterCardProps {
 
 export default function CharacterCard({ caricature, position, isVisible, onCardClick }: CharacterCardProps) {
   const groupRef = useRef<THREE.Group>(null);
-  const targetY = useRef(0);
-  const currentY = useRef(0);
 
   // Cargar la textura usando el hook de drei
   const texture = useTexture(`/caricatures/${caricature.file}`);
 
-  // Actualizar la posición objetivo cuando cambia la visibilidad
-  useEffect(() => {
-    targetY.current = isVisible ? 0 : -3; // Se desliza hacia abajo cuando no es visible
-  }, [isVisible]);
-
-  // Animación suave de deslizamiento vertical
-  useFrame((state, delta) => {
-    if (groupRef.current) {
-      const diff = targetY.current - currentY.current;
-      if (Math.abs(diff) > 0.01) {
-        currentY.current += diff * delta * 2; // Velocidad de animación
-        groupRef.current.position.y = currentY.current;
-      }
-    }
-  });
+  // Si no es visible, no renderizar nada
+  if (!isVisible) {
+    return null;
+  }
 
   return (
     <group position={position}>
