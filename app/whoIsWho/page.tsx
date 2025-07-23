@@ -13,6 +13,7 @@ import AppBarComponent from "@/components/appBar";
 import QuestionModal from "@/components/QuestionModal";
 import ImageModal from "@/components/ImageModal";
 import CaricatureGrid from "@/components/CaricatureGrid";
+import Footer from "@/components/Footer";
 import { useCaricatureFilter } from "@/hooks/useCaricatureFilter";
 import { downloadImage, questions, CaricatureImage } from "@/utils/filterUtils";
 
@@ -48,7 +49,7 @@ export default function WhoIsWho() {
   return (
     <>
       <AppBarComponent />
-      <Container maxWidth="xl" sx={{ py: 4 }}>
+      <Container maxWidth="xl" sx={{ py: 4, pb: '90px' }}>
         <Box sx={{ mb: 4, textAlign: 'center' }}>
           <Typography variant="h3" component="h1" gutterBottom sx={{ 
             fontWeight: 600,
@@ -79,7 +80,7 @@ export default function WhoIsWho() {
               boxShadow: '0 4px 12px rgba(3, 55, 120, 0.3)'
             }}
           >
-            Encuentra tu caricatura
+            Find your caricature
           </Button>
         </Box>
 
@@ -130,6 +131,9 @@ export default function WhoIsWho() {
         onClose={handleCloseModal}
         onDownload={downloadImage}
       />
+
+      {/* Footer fijo */}
+      <Footer />
     </>
   );
 } 

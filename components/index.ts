@@ -8,4 +8,5 @@ export { default as QuestionModal } from './QuestionModal';
 export { default as FooterBanner } from './footerBanner';
 export { default as AppBar } from './appBar';
 export { default as VideoBanner } from './VideoBanner';
-export { default as Section } from './section'; 
+export { default as Section } from './section';
+export { default as Footer } from './Footer'; 
