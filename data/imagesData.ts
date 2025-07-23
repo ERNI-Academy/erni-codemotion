@@ -131,7 +131,7 @@ export const caricaturesData = [
   { file: "122.png", features: [1,1,0,1] },
   { file: "123.png", features: [1,1,0,1] },
   { file: "124.png", features: [0,0,1,0] },
-  { file: "125.png", features: [1,0,0,1] },
+  { file: "125.png", features: [0,1,0,1] },
   { file: "126.png", features: [0,0,1,0] },
   { file: "127.png", features: [0,0,0,1] },
   { file: "128.png", features: [0,0,1,0] },
