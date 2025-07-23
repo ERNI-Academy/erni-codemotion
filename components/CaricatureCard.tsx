@@ -65,14 +65,18 @@ export default function CaricatureCard({
           <IconButton 
             onClick={() => onOpenModal(image)}
             size="small"
-            color="primary"
+            sx={{
+              color: '#033778'
+            }}
           >
             <ZoomIn />
           </IconButton>
           <IconButton 
             onClick={() => onDownload(image.src, image.name)}
             size="small"
-            color="primary"
+            sx={{
+              color: '#033778'
+            }}
           >
             <Download />
           </IconButton>

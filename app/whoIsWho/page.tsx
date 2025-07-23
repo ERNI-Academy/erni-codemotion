@@ -51,36 +51,36 @@ export default function WhoIsWho() {
       <Container maxWidth="xl" sx={{ py: 4 }}>
         <Box sx={{ mb: 4, textAlign: 'center' }}>
           <Typography variant="h3" component="h1" gutterBottom sx={{ 
-            fontWeight: 'bold',
-            background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
+            fontWeight: 600,
+            color: '#033778',
+            fontFamily: 'var(--font-source-sans-pro), sans-serif',
+            fontSize: { xs: '3.25rem', md: '4rem' },
+            lineHeight: 1.2
           }}>
-            Quién es quién
+            Who is who
           </Typography>
           <Button
-            variant="text"
+            variant="contained"
             onClick={handleRestartSequence}
             sx={{
-              color: 'text.secondary',
-              fontSize: '1.25rem',
-              fontWeight: 400,
+              backgroundColor: '#033778',
+              color: 'white',
+              fontSize: '1.125rem',
+              fontWeight: 600,
               textTransform: 'none',
-              p: 1,
-              borderRadius: 2,
+              px: 4,
+              py: 1.5,
+              borderRadius: '25px',
+              fontFamily: 'var(--font-source-sans-pro), sans-serif',
               '&:hover': {
-                backgroundColor: 'rgba(33, 150, 243, 0.08)',
-                color: 'primary.main'
+                backgroundColor: '#022a5e'
               },
-              transition: 'all 0.2s ease-in-out'
+              transition: 'all 0.3s ease-in-out',
+              boxShadow: '0 4px 12px rgba(3, 55, 120, 0.3)'
             }}
           >
             Encuentra tu caricatura
           </Button>
-          <Typography variant="body1" color="primary" sx={{ mt: 2 }}>
-            {filteredImages.length} caricaturas
-          </Typography>
         </Box>
 
         <CaricatureGrid

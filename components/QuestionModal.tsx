@@ -66,34 +66,55 @@ export default function QuestionModal({
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center',
-          borderBottom: '1px solid',
-          borderColor: 'divider'
+          backgroundColor: '#033778',
+          color: 'white'
         }}>
           <IconButton
             onClick={onPrevious}
             disabled={currentQuestionIndex === 0}
             sx={{
               visibility: currentQuestionIndex === 0 ? 'hidden' : 'visible',
-              color: 'primary.main'
+              color: 'white',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.1)'
+              }
             }}
           >
             <ArrowBack />
           </IconButton>
           
-          <Typography variant="body2" color="text.secondary">
+          <Typography 
+            variant="body2" 
+            sx={{
+              color: 'white',
+              fontFamily: 'var(--font-source-sans-pro), sans-serif',
+              fontWeight: 600,
+              fontSize: '1.2rem'
+            }}
+          >
             Pregunta {currentQuestionIndex + 1} de {totalQuestions}
           </Typography>
           
           <IconButton
             onClick={onCancel}
-            color="error"
+            sx={{
+              color: 'white',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.1)'
+              }
+            }}
+            aria-label="Cerrar"
           >
-            <Cancel />
+            {/* Icono de X sin círculo */}
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
           </IconButton>
         </Box>
 
         {/* Contenido del modal */}
-        <Box sx={{ p: 4, textAlign: 'center' }}>
+        <Box sx={{ p: 4 }}>
           <Typography 
             variant="h5" 
             component="h2" 
@@ -101,7 +122,8 @@ export default function QuestionModal({
             sx={{ 
               fontWeight: 'bold',
               mb: 4,
-              color: 'text.primary'
+              color: '#033778',
+              fontFamily: 'var(--font-source-sans-pro), sans-serif'
             }}
           >
             {currentQuestion.text}
@@ -120,10 +142,13 @@ export default function QuestionModal({
               onClick={() => onAnswer(true)}
               sx={{
                 minWidth: { xs: '100%', sm: '120px' },
-                py: 1.5,
+                py: 0.6, // Reducido para que el botón sea más fino
                 fontSize: '1.1rem',
                 fontWeight: 'bold',
-                borderRadius: 2
+                borderRadius: '25px',
+                fontFamily: 'var(--font-source-sans-pro), sans-serif',
+                textTransform: 'none',
+                lineHeight: 1.1 // Opcional: asegura que el texto no haga el botón más alto
               }}
             >
               Sí
@@ -135,10 +160,13 @@ export default function QuestionModal({
               onClick={() => onAnswer(false)}
               sx={{
                 minWidth: { xs: '100%', sm: '120px' },
-                py: 1.5,
+                py: 0.6, // Reducido para que el botón sea más fino
                 fontSize: '1.1rem',
                 fontWeight: 'bold',
-                borderRadius: 2
+                borderRadius: '25px',
+                fontFamily: 'var(--font-source-sans-pro), sans-serif',
+                textTransform: 'none',
+                lineHeight: 1.1 // Opcional: asegura que el texto no haga el botón más alto
               }}
             >
               No

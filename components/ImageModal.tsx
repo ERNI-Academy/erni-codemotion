@@ -2,7 +2,8 @@ import {
   Modal, 
   Paper, 
   Box, 
-  IconButton 
+  IconButton,
+  Typography
 } from '@mui/material';
 import { 
   Close, 
@@ -47,22 +48,38 @@ export default function ImageModal({
           overflow: 'hidden'
         }}
       >
-        <IconButton
-          onClick={onClose}
-          sx={{
-            position: 'absolute',
-            top: 8,
-            right: 8,
-            bgcolor: 'rgba(0,0,0,0.5)',
-            color: 'white',
-            zIndex: 1,
-            '&:hover': {
-              bgcolor: 'rgba(0,0,0,0.7)'
-            }
-          }}
-        >
-          <Close />
-        </IconButton>
+        {/* Header del modal */}
+        <Box sx={{ 
+          p: 2, 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          backgroundColor: '#033778',
+          color: 'white'
+        }}>
+          <Typography 
+            variant="h6" 
+            sx={{
+              color: 'white',
+              fontFamily: 'var(--font-source-sans-pro), sans-serif',
+              fontWeight: 600
+            }}
+          >
+            {selectedImage?.name}
+          </Typography>
+          
+          <IconButton
+            onClick={onClose}
+            sx={{
+              color: 'white',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.1)'
+              }
+            }}
+          >
+            <Close />
+          </IconButton>
+        </Box>
 
         <Box
           component="img"
@@ -71,7 +88,7 @@ export default function ImageModal({
           sx={{
             width: '100%',
             height: 'auto',
-            maxHeight: '80vh',
+            maxHeight: '70vh',
             objectFit: 'contain',
             display: 'block'
           }}
@@ -86,13 +103,14 @@ export default function ImageModal({
         }}>
           <IconButton
             onClick={() => selectedImage && onDownload(selectedImage.src, selectedImage.name)}
-            color="primary"
             size="large"
             sx={{
-              bgcolor: 'primary.main',
+              bgcolor: '#033778',
               color: 'white',
+              borderRadius: '25px',
+              fontFamily: 'var(--font-source-sans-pro), sans-serif',
               '&:hover': {
-                bgcolor: 'primary.dark'
+                bgcolor: '#022a5e'
               }
             }}
           >
