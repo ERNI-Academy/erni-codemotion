@@ -55,7 +55,7 @@ export default function WhoIsWho3DPage() {
             enablePan={false}
             minPolarAngle={Math.PI / 4}
             maxPolarAngle={Math.PI / 2.5}
-            minDistance={15}e
+            minDistance={15}
             maxDistance={30}
             target={[0, 0, 0]}
           />
