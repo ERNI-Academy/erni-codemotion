@@ -1,7 +1,9 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { Text } from '@react-three/drei';
+import { useThree } from '@react-three/fiber';
+import * as THREE from 'three';
 import { CaricatureFeatures, caricaturesData } from '../data/imagesData';
 import { CharacterCard } from './index';
 
@@ -11,6 +13,42 @@ interface WhoIsWhoBoardProps {
 }
 
 export default function WhoIsWhoBoard({ activeFilters, onCardClick }: WhoIsWhoBoardProps) {
+  const groupRef = useRef<THREE.Group>(null);
+  const { camera, gl } = useThree();
+
+  // Manejador de clics global con raycasting
+  const handleGlobalClick = (event: any) => {
+    if (!onCardClick) return;
+
+    const rect = gl.domElement.getBoundingClientRect();
+    const mouse = new THREE.Vector2();
+    
+    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    
+    const raycaster = new THREE.Raycaster();
+    raycaster.setFromCamera(mouse, camera);
+    
+    if (groupRef.current) {
+      const intersects = raycaster.intersectObjects(groupRef.current.children, true);
+      
+      if (intersects.length > 0) {
+        const firstIntersection = intersects[0];
+        const cardGroup = firstIntersection.object.userData?.isCard ? 
+          firstIntersection.object : 
+          firstIntersection.object.parent?.userData?.isCard ? 
+            firstIntersection.object.parent : null;
+        
+        if (cardGroup && cardGroup.userData?.cardId) {
+          const cardData = caricaturesData.find(card => card.file === cardGroup.userData.cardId);
+          if (cardData) {
+            onCardClick(cardData);
+          }
+        }
+      }
+    }
+  };
+
   // Filtrar las caricaturas basándose en los filtros activos
   const filteredCaricatures = useMemo(() => {
     if (activeFilters.length === 0) {
@@ -60,7 +98,7 @@ export default function WhoIsWhoBoard({ activeFilters, onCardClick }: WhoIsWhoBo
   }, [filteredCaricatures]);
 
   return (
-    <group>
+    <group ref={groupRef} onClick={handleGlobalClick}>
       {/* Tablero base principal */}
       <mesh position={[0, -2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <boxGeometry args={[12, 25, 0.2]} />

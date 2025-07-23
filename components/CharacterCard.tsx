@@ -32,7 +32,7 @@ export default function CharacterCard({ caricature, position, isVisible, onCardC
       <group 
         ref={groupRef} 
         position={[0, 0, 0.05]}
-        onClick={() => onCardClick?.(caricature)}
+        userData={{ isCard: true, cardId: caricature.file }}
       >
         {/* Marco de la ficha */}
         <mesh>
