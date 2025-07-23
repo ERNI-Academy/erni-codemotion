@@ -74,10 +74,10 @@ export default function WhoIsWho() {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
-            Galería de Caricaturas
+            Quién es quién
           </Typography>
           <Typography variant="h6" color="text.secondary" gutterBottom>
-            Descubre todas las caricaturas del equipo
+            Encuentra tu caricatura
           </Typography>
           <Typography variant="body1" color="primary" sx={{ mt: 2 }}>
             {images.length} caricaturas
