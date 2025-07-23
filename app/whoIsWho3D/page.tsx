@@ -40,7 +40,7 @@ export default function WhoIsWho3DPage() {
       </div>
 
       {/* Canvas 3D */}
-      <div className="w-full h-screen">
+      <div className="w-full h-screen" style={{ marginTop: '-100px' }}>
         <Canvas
           camera={{ position: [0, 5, 25], fov: 35 }}
           style={{ background: 'transparent' }}
@@ -55,7 +55,7 @@ export default function WhoIsWho3DPage() {
             enablePan={false}
             minPolarAngle={Math.PI / 4}
             maxPolarAngle={Math.PI / 2.5}
-            minDistance={15}
+            minDistance={15}e
             maxDistance={30}
             target={[0, 0, 0]}
           />
