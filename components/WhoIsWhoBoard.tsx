@@ -64,7 +64,7 @@ export default function WhoIsWhoBoard({ activeFilters, onCardClick }: WhoIsWhoBo
       {/* Tablero base principal */}
       <mesh position={[0, -2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <boxGeometry args={[12, 25, 0.2]} />
-        <meshStandardMaterial color="#ff8c00" />
+        <meshStandardMaterial color="#033778" />
       </mesh>
 
       {/* Niveles escalonados del tablero */}
@@ -75,18 +75,18 @@ export default function WhoIsWhoBoard({ activeFilters, onCardClick }: WhoIsWhoBo
           rotation={[-Math.PI / 2, 0, 0]}
         >
           <boxGeometry args={[12, 25, 0.15]} />
-          <meshStandardMaterial color="#ff6b00" />
+          <meshStandardMaterial color="#033778" />
         </mesh>
       ))}
 
       {/* Bordes laterales del tablero */}
       <mesh position={[-6, -1.5, 0]}>
         <boxGeometry args={[0.3, 6, 25]} />
-        <meshStandardMaterial color="#e55a00" />
+        <meshStandardMaterial color="#033778" />
       </mesh>
       <mesh position={[6, -1.5, 0]}>
         <boxGeometry args={[0.3, 6, 25]} />
-        <meshStandardMaterial color="#e55a00" />
+        <meshStandardMaterial color="#033778" />
       </mesh>
 
       {/* Fichas de personajes */}

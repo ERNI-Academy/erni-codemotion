@@ -29,8 +29,8 @@ export default function FilterButtons({ activeFilters, onFilterToggle }: FilterB
               px-6 py-3 rounded-full font-semibold text-lg transition-all duration-300
               transform hover:scale-105 active:scale-95
               ${isActive 
-                ? 'bg-white text-orange-600 shadow-lg' 
-                : 'bg-orange-700 text-white hover:bg-orange-800 shadow-md'
+                ? 'bg-[#00BEF4] text-white shadow-lg' 
+                : 'bg-[#033778] text-white shadow-md hover:shadow-lg'
               }
             `}
           >

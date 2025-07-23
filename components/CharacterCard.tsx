@@ -74,7 +74,6 @@ export default function CharacterCard({ caricature, position, isVisible, onCardC
 
       {/* Bisagra en la parte inferior - no rota */}
       <mesh position={[0, -0.6, 0]}>
-        <cylinderGeometry args={[0.02, 0.02, 1.2, 8]} />
         <meshStandardMaterial color="#666" />
       </mesh>
     </group>

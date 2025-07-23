@@ -23,11 +23,11 @@ export default function WhoIsWho3DPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-400 to-orange-600">
+    <div className="min-h-screen bg-white">
       {/* Header con filtros */}
       <div className="absolute top-0 left-0 right-0 z-10 p-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold text-white text-center mb-4">
+          <h1 className="text-3xl font-bold text-[#033778] text-center mb-4">
             ¿Quién es Quién? 3D
           </h1>
           <FilterButtons 
@@ -40,7 +40,7 @@ export default function WhoIsWho3DPage() {
       {/* Canvas 3D */}
       <div className="w-full h-screen">
         <Canvas
-          camera={{ position: [0, 10, 15], fov: 40 }}
+          camera={{ position: [0, 5, 25], fov: 35 }}
           style={{ background: 'transparent' }}
         >
           <ambientLight intensity={0.6} />
@@ -51,10 +51,11 @@ export default function WhoIsWho3DPage() {
           
           <OrbitControls 
             enablePan={false}
-            minPolarAngle={Math.PI / 6}
-            maxPolarAngle={Math.PI / 2}
-            minDistance={8}
-            maxDistance={25}
+            minPolarAngle={Math.PI / 4}
+            maxPolarAngle={Math.PI / 2.5}
+            minDistance={15}
+            maxDistance={30}
+            target={[0, 0, 0]}
           />
         </Canvas>
       </div>
