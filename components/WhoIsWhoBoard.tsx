@@ -47,7 +47,7 @@ export default function WhoIsWhoBoard({ activeFilters, onCardClick }: WhoIsWhoBo
             isVisible,
             position: [
               col * cardSpacingX - (boardWidth / 2) + (cardSpacingX / 2), // X: centrado en el tablero
-              0, // Y: tocando el tablero
+              0.6, // Y: elevado para ser completamente visible
               row * cardSpacingZ - (boardDepth / 2) + (cardSpacingZ / 2) // Z: centrado en profundidad
             ]
           });
