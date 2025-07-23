@@ -29,6 +29,12 @@ export default function WhoIsWhoBoard({ activeFilters, onCardClick }: WhoIsWhoBo
     const totalRows = Math.ceil(totalCards / cardsPerRow);
     const layout = [];
     
+    // Dimensiones del tablero: 12 de ancho, 25 de profundidad
+    const boardWidth = 12;
+    const boardDepth = 25;
+    const cardSpacingX = boardWidth / cardsPerRow; // 1.5 unidades entre columnas
+    const cardSpacingZ = boardDepth / totalRows; // Espaciado vertical basado en el número de filas
+    
     for (let row = 0; row < totalRows; row++) {
       const rowCards = [];
       for (let col = 0; col < cardsPerRow; col++) {
@@ -39,7 +45,11 @@ export default function WhoIsWhoBoard({ activeFilters, onCardClick }: WhoIsWhoBo
           rowCards.push({
             ...caricature,
             isVisible,
-            position: [col * 1.2 - 4.2, 0, row * 1.2 - 2] // X: columna, Y: altura (0 = tocando el tablero), Z: profundidad (delante hacia atrás)
+            position: [
+              col * cardSpacingX - (boardWidth / 2) + (cardSpacingX / 2), // X: centrado en el tablero
+              0, // Y: tocando el tablero
+              row * cardSpacingZ - (boardDepth / 2) + (cardSpacingZ / 2) // Z: centrado en profundidad
+            ]
           });
         }
       }
@@ -106,7 +116,7 @@ export default function WhoIsWhoBoard({ activeFilters, onCardClick }: WhoIsWhoBo
 
       {/* Texto del juego en el frente */}
       <Text
-        position={[0, -4, -12]}
+        position={[0, -4, -12.5]}
         fontSize={0.3}
         color="#fff"
         anchorX="center"
