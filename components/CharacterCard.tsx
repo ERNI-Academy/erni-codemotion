@@ -13,58 +13,66 @@ interface CharacterCardProps {
   };
   position: [number, number, number];
   isVisible: boolean;
+  onCardClick?: (caricature: { file: string; features: number[] }) => void;
 }
 
-export default function CharacterCard({ caricature, position, isVisible }: CharacterCardProps) {
-  const meshRef = useRef<THREE.Mesh>(null);
-  const targetRotation = useRef(0);
-  const currentRotation = useRef(0);
+export default function CharacterCard({ caricature, position, isVisible, onCardClick }: CharacterCardProps) {
+  const groupRef = useRef<THREE.Group>(null);
+  const targetY = useRef(0);
+  const currentY = useRef(0);
 
   // Cargar la textura usando el hook de drei
   const texture = useTexture(`/caricatures/${caricature.file}`);
 
-  // Actualizar la rotación objetivo cuando cambia la visibilidad
+  // Actualizar la posición objetivo cuando cambia la visibilidad
   useEffect(() => {
-    targetRotation.current = isVisible ? 0 : Math.PI;
+    targetY.current = isVisible ? 0 : -3; // Se desliza hacia abajo cuando no es visible
   }, [isVisible]);
 
-  // Animación suave de rotación
+  // Animación suave de deslizamiento vertical
   useFrame((state, delta) => {
-    if (meshRef.current) {
-      const diff = targetRotation.current - currentRotation.current;
+    if (groupRef.current) {
+      const diff = targetY.current - currentY.current;
       if (Math.abs(diff) > 0.01) {
-        currentRotation.current += diff * delta * 3; // Velocidad de animación
-        meshRef.current.rotation.x = currentRotation.current;
+        currentY.current += diff * delta * 2; // Velocidad de animación
+        groupRef.current.position.y = currentY.current;
       }
     }
   });
 
   return (
     <group position={position}>
-      {/* Marco de la ficha */}
-      <mesh ref={meshRef} position={[0, 0, 0.05]}>
-        <boxGeometry args={[1, 1.2, 0.1]} />
-        <meshStandardMaterial color="#ffffff" />
-      </mesh>
-
-      {/* Imagen del personaje */}
-      <mesh position={[0, 0.1, 0.1]}>
-        <planeGeometry args={[0.8, 0.8]} />
-        <meshStandardMaterial map={texture} />
-      </mesh>
-
-      {/* Nombre del personaje */}
-      <Text
-        position={[0, -0.4, 0.1]}
-        fontSize={0.08}
-        color="#333"
-        anchorX="center"
-        anchorY="middle"
+      {/* Grupo que contiene el marco, imagen y texto - todo se desliza junto */}
+      <group 
+        ref={groupRef} 
+        position={[0, 0, 0.05]}
+        onClick={() => onCardClick?.(caricature)}
       >
-        {caricature.file.replace('.png', '')}
-      </Text>
+        {/* Marco de la ficha */}
+        <mesh>
+          <boxGeometry args={[1, 1.2, 0.1]} />
+          <meshStandardMaterial color="#ffffff" />
+        </mesh>
 
-      {/* Bisagra en la parte inferior */}
+        {/* Imagen del personaje - anclada al frente del marco */}
+        <mesh position={[0, 0.1, 0.05]}>
+          <planeGeometry args={[0.8, 0.8]} />
+          <meshStandardMaterial map={texture} side={THREE.FrontSide} />
+        </mesh>
+
+        {/* Nombre del personaje - anclado al frente del marco */}
+        <Text
+          position={[0, -0.4, 0.05]}
+          fontSize={0.08}
+          color="#333"
+          anchorX="center"
+          anchorY="middle"
+        >
+          {caricature.file.replace('.png', '')}
+        </Text>
+      </group>
+
+      {/* Bisagra en la parte inferior - no rota */}
       <mesh position={[0, -0.6, 0]}>
         <cylinderGeometry args={[0.02, 0.02, 1.2, 8]} />
         <meshStandardMaterial color="#666" />
