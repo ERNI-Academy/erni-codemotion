@@ -1,0 +1,43 @@
+'use client';
+
+import { CaricatureFeatures } from '../data/imagesData';
+
+interface FilterButtonsProps {
+  activeFilters: CaricatureFeatures[];
+  onFilterToggle: (filter: CaricatureFeatures) => void;
+}
+
+const filterLabels = {
+  [CaricatureFeatures.GLASSES]: 'Gafas',
+  [CaricatureFeatures.BEARD]: 'Barba',
+  [CaricatureFeatures.LONG_AIR]: 'Pelo largo',
+  [CaricatureFeatures.MAN]: 'Hombre'
+};
+
+export default function FilterButtons({ activeFilters, onFilterToggle }: FilterButtonsProps) {
+  return (
+    <div className="flex flex-wrap justify-center gap-3">
+      {Object.entries(filterLabels).map(([key, label]) => {
+        const filter = parseInt(key) as CaricatureFeatures;
+        const isActive = activeFilters.includes(filter);
+        
+        return (
+          <button
+            key={filter}
+            onClick={() => onFilterToggle(filter)}
+            className={`
+              px-6 py-3 rounded-full font-semibold text-lg transition-all duration-300
+              transform hover:scale-105 active:scale-95
+              ${isActive 
+                ? 'bg-white text-orange-600 shadow-lg' 
+                : 'bg-orange-700 text-white hover:bg-orange-800 shadow-md'
+              }
+            `}
+          >
+            {label}
+          </button>
+        );
+      })}
+    </div>
+  );
+} 
