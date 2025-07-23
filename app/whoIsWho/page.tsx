@@ -95,6 +95,19 @@ export default function WhoIsWho() {
     setSelectedImage(null);
   };
 
+  const filterImagesBySequence = (answers: boolean[]): CaricatureImage[] => {
+    return images.filter(image => {
+      // Verificar que la imagen tenga la secuencia de respuestas
+      for (let i = 0; i < answers.length; i++) {
+        const expectedValue = answers[i] ? 1 : 0;
+        if (image.features[i] !== expectedValue) {
+          return false;
+        }
+      }
+      return true;
+    });
+  };
+
   const handleAnswer = (answer: boolean) => {
     const newAnswers = [...answers, answer];
     setAnswers(newAnswers);
@@ -103,16 +116,7 @@ export default function WhoIsWho() {
     setIsFiltering(true);
     
     setTimeout(() => {
-      let filtered = [...images];
-      
-      // Aplicar todos los filtros acumulados
-      newAnswers.forEach((ans, index) => {
-        if (ans) {
-          const feature = questions[index].feature;
-          filtered = filtered.filter(image => image.features.includes(feature));
-        }
-      });
-      
+      const filtered = filterImagesBySequence(newAnswers);
       setFilteredImages(filtered);
       setIsFiltering(false);
       
@@ -134,15 +138,7 @@ export default function WhoIsWho() {
       // Recalcular filtros
       setIsFiltering(true);
       setTimeout(() => {
-        let filtered = [...images];
-        
-        newAnswers.forEach((ans, index) => {
-          if (ans) {
-            const feature = questions[index].feature;
-            filtered = filtered.filter(image => image.features.includes(feature));
-          }
-        });
-        
+        const filtered = filterImagesBySequence(newAnswers);
         setFilteredImages(filtered);
         setIsFiltering(false);
       }, 300);
