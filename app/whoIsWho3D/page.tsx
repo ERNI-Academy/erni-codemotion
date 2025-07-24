@@ -26,11 +26,10 @@ export default function WhoIsWho3DPage() {
   return (
     <div className="min-h-screen bg-white">
       <AppBarComponent />
-      {/* Header con filtros */}
       <div className="absolute top-0 left-0 right-0 z-10 p-4" style={{ marginTop: '64px' }}>
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold text-[#033778] text-center mb-4">
-            ¿Quién es Quién? 3D
+            Who is who? 3D mode
           </h1>
           <FilterButtons 
             activeFilters={activeFilters}

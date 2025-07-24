@@ -58,9 +58,6 @@ export default function CaricatureCard({
         onClick={() => onOpenModal(image)}
       />
       <Box sx={{ p: 2, textAlign: 'center' }}>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-          {image.name}
-        </Typography>
         <CardActions sx={{ justifyContent: 'center', p: 0 }}>
           <IconButton 
             onClick={() => onOpenModal(image)}

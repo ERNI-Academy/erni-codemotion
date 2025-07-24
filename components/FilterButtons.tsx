@@ -8,11 +8,11 @@ interface FilterButtonsProps {
 }
 
 const filterLabels = {
-  [CaricatureFeatures.GLASSES]: 'Gafas',
-  [CaricatureFeatures.BEARD]: 'Barba',
-  [CaricatureFeatures.LONG_AIR]: 'Pelo largo',
-  [CaricatureFeatures.EARRINGS]: 'Pendientes',
-  [CaricatureFeatures.MAN]: 'Hombre'
+  [CaricatureFeatures.GLASSES]: 'Glasses',
+  [CaricatureFeatures.BEARD]: 'Beard',
+  [CaricatureFeatures.LONG_AIR]: 'Long hair',
+  [CaricatureFeatures.EARRINGS]: 'Earrings',
+  [CaricatureFeatures.MAN]: 'Man'
 };
 
 export default function FilterButtons({ activeFilters, onFilterToggle }: FilterButtonsProps) {

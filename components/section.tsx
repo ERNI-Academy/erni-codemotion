@@ -38,16 +38,29 @@ export default function Section({
         <p>{paragraph2}</p>
       </div>
       
-      <a
-        href={buttonLink}
-        className="inline-block bg-[#033778] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#022a5e] transition-colors duration-300"
-        style={{ 
-          fontFamily: 'var(--font-source-sans-pro), sans-serif',
-          fontWeight: 600
-        }}
-      >
-        {buttonText}
-      </a>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <a
+          href={buttonLink}
+          className="inline-block bg-[#033778] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#022a5e] transition-colors duration-300"
+          style={{ 
+            fontFamily: 'var(--font-source-sans-pro), sans-serif',
+            fontWeight: 600
+          }}
+        >
+          {buttonText}
+        </a>
+        
+        <a
+          href="/whoIsWho3D"
+          className="hidden md:inline-block bg-[#033778] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#022a5e] transition-colors duration-300"
+          style={{ 
+            fontFamily: 'var(--font-source-sans-pro), sans-serif',
+            fontWeight: 600
+          }}
+        >
+          Find your picture in 3D
+        </a>
+      </div>
     </div>
   );
 
