@@ -12,7 +12,7 @@ export default function FooterBanner() {
       <div 
         className="absolute inset-0 bg-[#033778] opacity-10"
       />
-            <div className="relative z-10 px-12 mx-auto h-full">
+      <div className="relative z-10 px-0 sm:px-12 mx-auto h-full">
         <div className="grid grid-cols-1 lg:grid-cols-10 h-full gap-6 lg:gap-0">
           <div className="lg:col-span-7 flex flex-col justify-between">
             <h1 
