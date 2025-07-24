@@ -53,7 +53,7 @@ export default function Section({
 
   const ImageContent = () => (
     <div className="relative">
-      <div className="relative overflow-hidden rounded-lg shadow-lg">
+      <div className="relative overflow-hidden shadow-lg">
         <img
           src={imageSrc}
           alt={imageAlt}
