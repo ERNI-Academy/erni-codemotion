@@ -4,13 +4,13 @@ export default function FooterBanner() {
   return (
     <section className="relative w-full py-16 px-12 overflow-hidden h-[600px]">
       <div 
-        className="absolute inset-0 bg-cover bg-center mx-12"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: 'url(/footerImage.jpg)'
         }}
       />
       <div 
-        className="absolute inset-0 mx-12 bg-[#033778] opacity-10"
+        className="absolute inset-0 bg-[#033778] opacity-10"
       />
             <div className="relative z-10 px-12 mx-auto h-full">
         <div className="grid grid-cols-1 lg:grid-cols-10 h-full gap-6 lg:gap-0">
@@ -26,7 +26,7 @@ export default function FooterBanner() {
             
             <div className="space-y-6 lg:space-y-0">
               <p 
-                className="text-base md:text-lg lg:text-xl text-white leading-relaxed max-w-2xl"
+                className="hidden lg:block text-base md:text-lg lg:text-xl text-white leading-relaxed max-w-2xl"
                 style={{ fontFamily: 'var(--font-source-sans-pro), sans-serif' }}
               >
                 We are looking for people like you, eager to grow and who want to
@@ -36,7 +36,7 @@ export default function FooterBanner() {
             </div>
           </div>
           
-          <div className="hidden lg:flex lg:col-span-3 items-end justify-end">
+          <div className="flex lg:flex lg:col-span-3 items-end justify-end">
             <a
               href="https://www.betterask.erni/es-en/job-opportunities/"
               target="_blank"
