@@ -6,7 +6,7 @@ export default function FooterBanner() {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(/footerImage.jpg)'
+          backgroundImage: 'url(/footerImage.JPG)'
         }}
       />
       <div 
