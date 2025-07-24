@@ -1,4 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+// Hook para detectar si es un dispositivo móvil
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+      
+      // Detección específica para Android e iOS
+      const androidRegex = /android/i;
+      const iosRegex = /iphone|ipad|ipod/i;
+      
+      // También incluimos otros dispositivos móviles para mayor compatibilidad
+      const mobileRegex = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini|mobile|tablet/i;
+      
+      const isAndroid = androidRegex.test(userAgent);
+      const isIOS = iosRegex.test(userAgent);
+      const isMobileDevice = mobileRegex.test(userAgent);
+      
+      setIsMobile(isAndroid || isIOS || isMobileDevice);
+    };
+
+    checkIsMobile();
+  }, []);
+
+  return isMobile;
+};
 
 interface SectionProps {
   title: string;
@@ -21,6 +49,8 @@ export default function Section({
   imageAlt,
   imagePosition = 'right'
 }: SectionProps) {
+  const isMobile = useIsMobile();
+
   const TextContent = () => (
     <div className="space-y-6">
       <h2 
@@ -50,16 +80,18 @@ export default function Section({
           {buttonText}
         </a>
         
-        <a
-          href="/whoIsWho3D"
-          className="hidden md:inline-block bg-[#033778] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#022a5e] transition-colors duration-300"
-          style={{ 
-            fontFamily: 'var(--font-source-sans-pro), sans-serif',
-            fontWeight: 600
-          }}
-        >
-          Find your picture in 3D
-        </a>
+        {!isMobile && (
+          <a
+            href="/whoIsWho3D"
+            className="inline-block bg-[#033778] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#022a5e] transition-colors duration-300"
+            style={{ 
+              fontFamily: 'var(--font-source-sans-pro), sans-serif',
+              fontWeight: 600
+            }}
+          >
+            Find your picture in 3D
+          </a>
+        )}
       </div>
     </div>
   );
