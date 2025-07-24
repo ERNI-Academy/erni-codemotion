@@ -11,6 +11,7 @@ const filterLabels = {
   [CaricatureFeatures.GLASSES]: 'Gafas',
   [CaricatureFeatures.BEARD]: 'Barba',
   [CaricatureFeatures.LONG_AIR]: 'Pelo largo',
+  [CaricatureFeatures.EARRINGS]: 'Pendientes',
   [CaricatureFeatures.MAN]: 'Hombre'
 };
 
