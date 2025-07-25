@@ -4,7 +4,7 @@ export default function VideoBanner() {
   return (
     <div className="w-full h-[75vh] relative overflow-hidden">
       <iframe
-        src="https://www.youtube.com/embed/SjGNT0ptT9Y?autoplay=1&mute=1&loop=1&playlist=SjGNT0ptT9Y&controls=0&showinfo=0&rel=0&modestbranding=1"
+        src="https://www.youtube.com/embed/pNh3RXKItQE?si=xmFGSl4ZHhwLmBhc&autoplay=1&mute=1&loop=1&playlist=pNh3RXKItQE"
         className="w-full h-full border-0 absolute top-0 left-0 object-cover scale-[2.8] md:scale-[1.6] origin-center"
         title="Video Banner"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -28,7 +28,7 @@ export default function VideoBanner() {
             fontWeight: 600
           }}
         >
-          ERNI<br />Swiss software<br /> engineering
+          ERNI<br />Ingeniería de Software<br /> Suiza
         </h1>
       </div>
     </div>

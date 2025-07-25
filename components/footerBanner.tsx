@@ -1,3 +1,4 @@
+import { HtmlRenderer } from '@/utils/htmlRenderer';
 import React from 'react';
 
 export default function FooterBanner() {
@@ -19,9 +20,7 @@ export default function FooterBanner() {
               className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight"
               style={{ fontFamily: 'var(--font-source-sans-pro), sans-serif' }}
             >
-              Develop your potential and
-              <br />
-              become an ERNIan.
+              <HtmlRenderer text={`Desarrolla tu potencial y<br />conviértete en un ERNIan.`} />
             </h1>
             
             <div className="space-y-6 lg:space-y-0">
@@ -29,9 +28,7 @@ export default function FooterBanner() {
                 className="hidden lg:block text-base md:text-lg lg:text-xl text-white leading-relaxed max-w-2xl"
                 style={{ fontFamily: 'var(--font-source-sans-pro), sans-serif' }}
               >
-                We are looking for people like you, eager to grow and who want to
-                <br />
-                be part of challenging projects to go even further.
+                <HtmlRenderer text={`Buscamos personas como tú, con ganas de crecer y que quieran formar<br />parte de proyectos retadores para llegar aún más lejos.`} />
               </p>
             </div>
           </div>
@@ -44,7 +41,7 @@ export default function FooterBanner() {
               className="bg-white text-black px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg flex items-center justify-center min-w-[280px] whitespace-nowrap"
               style={{ fontFamily: 'var(--font-source-sans-pro), sans-serif' }}
             >
-              View available opportunities →
+              <HtmlRenderer text={`Ver oportunidades disponibles →`} />
             </a>
           </div>
         </div>

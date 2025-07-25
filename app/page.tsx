@@ -9,12 +9,12 @@ export default function Home() {
       <AppBarComponent />
       <VideoBanner />
       <Section
-        title="Play Who is Who and get your caricature!"
-        paragraph1={`We had a blast seeing your real-world version at our stand. Now it's time to find your cartoon alter ego!<br />
-Play our "Who is Who" mini game to debug your identity spot your caricature among the crowd and download your digital twin.`}
-        paragraph2="Warning: high chance of laughing at your own pixel-perfect face."
-        buttonText="Let's play! →"
-        secondaryButtonText="Let's play in 3D! →"
+        title="¡Juega a Quién es Quién y encuentra tu caricatura!"
+        paragraph1={`Si visitaste nuestro stand y te hiciste un retrato con nuestro robot, ¡ahora es el momento de encontrar a tu alter ego en versión caricatura!<br />
+Juega a nuestro “Quién es Quién”, identifica tu caricatura entre la multitud y descarga a tu gemelo digital.`}
+        paragraph2="Aviso: hay muchas probabilidades de que te rías al ver tu propia cara en versión pixel-perfect."
+        buttonText="Juega ahora →"
+        secondaryButtonText="Juega en 3D →"
         buttonLink="/whoIsWho"
         imageSrc="/robotImage.png"
         imageAlt="Team collaboration - Woman and man working together on laptop"
