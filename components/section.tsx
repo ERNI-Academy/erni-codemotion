@@ -1,6 +1,8 @@
 'use client';
 
+import { secureHeapUsed } from 'crypto';
 import React, { useState, useEffect } from 'react';
+import { HtmlRenderer } from '@/utils/htmlRenderer';
 
 // Hook para detectar si es un dispositivo móvil
 const useIsMobile = () => {
@@ -35,6 +37,7 @@ interface SectionProps {
   paragraph1: string;
   paragraph2: string;
   buttonText: string;
+  secondaryButtonText: string;
   buttonLink: string;
   imageSrc: string;
   imageAlt: string;
@@ -46,6 +49,7 @@ export default function Section({
   paragraph1,
   paragraph2,
   buttonText,
+  secondaryButtonText,
   buttonLink,
   imageSrc,
   imageAlt,
@@ -66,8 +70,8 @@ export default function Section({
       </h2>
       
       <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
-        <p>{paragraph1}</p>
-        <p>{paragraph2}</p>
+        <HtmlRenderer text={paragraph1} />
+        <HtmlRenderer text={paragraph2} />
       </div>
       
       <div className="flex flex-col sm:flex-row gap-4">
@@ -91,7 +95,7 @@ export default function Section({
               fontWeight: 600
             }}
           >
-            Find your picture in 3D
+            {secondaryButtonText}
           </a>
         )}
       </div>
