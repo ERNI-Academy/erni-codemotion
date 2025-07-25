@@ -1,6 +1,8 @@
 import AppBarComponent from "@/components/appBar";
 import VideoBanner from "@/components/VideoBanner";
 import Section from "@/components/section";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import SectionDivider from "@/components/SectionDivider";
 import FooterBanner from "@/components/footerBanner";
 
 export default function Home() {
@@ -20,6 +22,7 @@ Juega a nuestro “Quién es Quién”, identifica tu caricatura entre la multit
         imageAlt="Team collaboration - Woman and man working together on laptop"
         imagePosition="right"
       />
+      <TestimonialsSection />
       <FooterBanner />
     </div>
   );

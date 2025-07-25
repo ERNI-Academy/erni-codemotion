@@ -32,7 +32,6 @@ export default function FooterBanner() {
               </p>
             </div>
           </div>
-          
           <div className="flex lg:flex lg:col-span-3 items-end justify-end">
             <a
               href="https://www.betterask.erni/es-en/job-opportunities/"

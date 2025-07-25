@@ -10,4 +10,6 @@ export { default as AppBar } from './appBar';
 export { default as VideoBanner } from './VideoBanner';
 export { default as Section } from './section';
 export { default as Footer } from './Footer';
-export { default as InstagramIcon } from './InstagramIcon'; 
+export { default as InstagramIcon } from './InstagramIcon';
+export { default as TestimonialsSection } from './TestimonialsSection';
+export { default as SectionDivider } from './SectionDivider'; 

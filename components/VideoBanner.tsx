@@ -28,7 +28,7 @@ export default function VideoBanner() {
             fontWeight: 600
           }}
         >
-          ERNI<br />Ingeniería de Software<br /> Suiza
+          ERNI<br />Ingeniería de Software Suiza
         </h1>
       </div>
     </div>
