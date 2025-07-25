@@ -58,7 +58,7 @@ export default function WhoIsWho() {
             fontSize: { xs: '3.25rem', md: '4rem' },
             lineHeight: 1.2
           }}>
-            Who is who
+            ¿Quién es quién?
           </Typography>
           <Button
             variant="contained"
@@ -80,7 +80,7 @@ export default function WhoIsWho() {
               boxShadow: '0 4px 12px rgba(3, 55, 120, 0.3)'
             }}
           >
-            Find your caricature
+            Encuentra tu caricatura
           </Button>
         </Box>
 

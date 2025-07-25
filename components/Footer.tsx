@@ -64,7 +64,7 @@ export default function Footer() {
                 mr: { xs: 0, sm: 1 }
               }}
             >
-              Follow us
+              Síguenos en
             </Typography>
             <Box
               sx={{

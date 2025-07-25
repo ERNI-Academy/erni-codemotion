@@ -29,7 +29,7 @@ export default function WhoIsWho3DPage() {
       <div className="absolute top-0 left-0 right-0 z-10 p-4" style={{ marginTop: '64px' }}>
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold text-[#033778] text-center mb-4">
-            Who is who? 3D mode
+            ¿Quién es quién? 3D
           </h1>
           <FilterButtons 
             activeFilters={activeFilters}
