@@ -18,12 +18,17 @@ export const HtmlRenderer: React.FC<HtmlRendererProps> = ({
   const hasHtml = text.includes('<');
   
   if (hasHtml) {
-    return (
-      <div 
-        className={className}
-        dangerouslySetInnerHTML={{ __html: text }} 
-      />
-    );
+    // Cuando hay HTML, usar span para elementos de bloque para evitar anidación inválida
+    const safeElement = (as === 'p' || as === 'h1' || as === 'h2' || as === 'h3' || as === 'h4' || as === 'h5' || as === 'h6') ? 'span' : as;
+    
+    switch (safeElement) {
+      case 'div':
+        return <div className={className} dangerouslySetInnerHTML={{ __html: text }} />;
+      case 'span':
+        return <span className={className} dangerouslySetInnerHTML={{ __html: text }} />;
+      default:
+        return <span className={className} dangerouslySetInnerHTML={{ __html: text }} />;
+    }
   } else {
     switch (as) {
       case 'div':

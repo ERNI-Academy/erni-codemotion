@@ -20,7 +20,7 @@ export default function FooterBanner() {
               className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight"
               style={{ fontFamily: 'var(--font-source-sans-pro), sans-serif' }}
             >
-              <HtmlRenderer text={`Desarrolla tu potencial y<br />conviértete en un ERNIan.`} as="div" />
+              <HtmlRenderer text={`Desarrolla tu potencial y<br />conviértete en un ERNIan.`} />
             </h1>
             
             <div className="space-y-6 lg:space-y-0">
@@ -28,7 +28,7 @@ export default function FooterBanner() {
                 className="hidden lg:block text-base md:text-lg lg:text-xl text-white leading-relaxed max-w-2xl"
                 style={{ fontFamily: 'var(--font-source-sans-pro), sans-serif' }}
               >
-                <HtmlRenderer text={`Buscamos personas como tú, con ganas de crecer y que quieran formar<br />parte de proyectos retadores para llegar aún más lejos.`} as="div" />
+                <HtmlRenderer text={`Buscamos personas como tú, con ganas de crecer y que quieran formar<br />parte de proyectos retadores para llegar aún más lejos.`} />
               </p>
             </div>
           </div>

@@ -44,9 +44,9 @@ const TestimonialCard: React.FC<TestimonialProps> = ({ videoUrl, quote, title })
       <div className="flex space-x-3">
         <div className="w-1 bg-[#033778] rounded-full"></div>
         <div className="flex-1">
-          <cite className="text-[#033778] font-semibold">
+          <div className="text-[#033778] font-semibold not-italic">
               {title}
-          </cite>
+          </div>
           <blockquote className="text-gray-700 text-lg leading-relaxed mb-2">
             {quote}
           </blockquote>
@@ -73,7 +73,6 @@ export default function TestimonialsSection() {
   return (
     <section className="w-full pb-16 px-12 bg-white">
       <div className="grid grid-cols-1 gap-12">
-        {/* Title */}
         <div className="space-y-6">
           <h2 
             className="text-4xl md:text-5xl font-semibold text-[#033778] leading-tight"
@@ -82,7 +81,7 @@ export default function TestimonialsSection() {
               fontWeight: 600
             }}
           >
-            <HtmlRenderer text={'¿Te perdiste alguna ponencia?'} as="div" />
+            <HtmlRenderer text={'¿Te perdiste alguna ponencia?'} />
           </h2>
         </div>
         
