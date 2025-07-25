@@ -26,7 +26,7 @@ export default function WhoIsWho3DPage() {
       <div className="absolute top-0 left-0 right-0 z-10 p-4" style={{ marginTop: '64px' }}>
         <div className="max-w-4xl mx-auto">
           <h1 
-            className="text-4xl md:text-5xl font-semibold text-[#033778] text-center mb-4 leading-tight"
+            className="text-4xl md:text-5xl font-semibold text-[#033778] text-center leading-tight"
             style={{ 
               fontFamily: 'var(--font-source-sans-pro), sans-serif',
               fontWeight: 600

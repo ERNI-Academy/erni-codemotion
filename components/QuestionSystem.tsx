@@ -83,7 +83,7 @@ export default function QuestionSystem({ onFiltersChange }: QuestionSystemProps)
           sx={{
             color: '#033778',
             fontWeight: 'bold',
-            mb: 3,
+            mb: 1,
             fontFamily: 'var(--font-source-sans-pro), sans-serif'
           }}
         >
@@ -129,7 +129,7 @@ export default function QuestionSystem({ onFiltersChange }: QuestionSystemProps)
         sx={{
           color: '#033778',
           fontWeight: 'bold',
-          mb: 4,
+          mb: 1,
           fontFamily: 'var(--font-source-sans-pro), sans-serif'
         }}
       >
