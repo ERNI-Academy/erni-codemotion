@@ -4,15 +4,16 @@ import { useMemo, useRef } from 'react';
 import { Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import { CaricatureFeatures, caricaturesData } from '../data/imagesData';
+import { caricaturesData } from '../data/imagesData';
 import { CharacterCard } from './index';
+import { filterImagesBySequence } from '../utils/filterUtils';
 
 interface WhoIsWhoBoardProps {
-  activeFilters: CaricatureFeatures[];
+  answers: boolean[];
   onCardClick?: (caricature: { file: string; features: number[] }) => void;
 }
 
-export default function WhoIsWhoBoard({ activeFilters, onCardClick }: WhoIsWhoBoardProps) {
+export default function WhoIsWhoBoard({ answers, onCardClick }: WhoIsWhoBoardProps) {
   const groupRef = useRef<THREE.Group>(null);
   const { camera, gl } = useThree();
 
@@ -49,16 +50,27 @@ export default function WhoIsWhoBoard({ activeFilters, onCardClick }: WhoIsWhoBo
     }
   };
 
-  // Filtrar las caricaturas basándose en los filtros activos
+  // Filtrar las caricaturas basándose en las respuestas
   const filteredCaricatures = useMemo(() => {
-    if (activeFilters.length === 0) {
+    if (answers.length === 0) {
       return caricaturesData;
     }
 
-    return caricaturesData.filter(caricature => {
-      return activeFilters.every(filter => caricature.features[filter] === 1);
-    });
-  }, [activeFilters]);
+    // Convertir caricaturesData al formato esperado por filterImagesBySequence
+    const images = caricaturesData.map(caricature => ({
+      name: caricature.file.replace('.png', ''),
+      src: `/caricatures/${caricature.file}`,
+      size: 'Mediana',
+      features: caricature.features
+    }));
+
+    const filtered = filterImagesBySequence(images, answers);
+    
+    // Convertir de vuelta al formato de caricaturesData
+    return caricaturesData.filter(caricature => 
+      filtered.some(img => img.name === caricature.file.replace('.png', ''))
+    );
+  }, [answers]);
 
   // Crear una matriz que ocupe todo el tablero de delante hacia atrás
   const boardLayout = useMemo(() => {

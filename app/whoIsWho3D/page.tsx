@@ -4,19 +4,16 @@ import { useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import AppBarComponent from "@/components/appBar";
-import { WhoIsWhoBoard, FilterButtons, ImageModal } from '../../components';
+import { WhoIsWhoBoard, QuestionSystem, ImageModal } from '../../components';
 import { CaricatureFeatures } from '../../data/imagesData';
+import { filterImagesBySequence } from '../../utils/filterUtils';
 
 export default function WhoIsWho3DPage() {
-  const [activeFilters, setActiveFilters] = useState<CaricatureFeatures[]>([]);
+  const [answers, setAnswers] = useState<boolean[]>([]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const handleFilterToggle = (filter: CaricatureFeatures) => {
-    setActiveFilters(prev => 
-      prev.includes(filter) 
-        ? prev.filter(f => f !== filter)
-        : [...prev, filter]
-    );
+  const handleFiltersChange = (newAnswers: boolean[]) => {
+    setAnswers(newAnswers);
   };
 
   const handleCardClick = (caricature: { file: string; features: number[] }) => {
@@ -28,12 +25,17 @@ export default function WhoIsWho3DPage() {
       <AppBarComponent />
       <div className="absolute top-0 left-0 right-0 z-10 p-4" style={{ marginTop: '64px' }}>
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold text-[#033778] text-center mb-4">
+          <h1 
+            className="text-4xl md:text-5xl font-semibold text-[#033778] text-center mb-4 leading-tight"
+            style={{ 
+              fontFamily: 'var(--font-source-sans-pro), sans-serif',
+              fontWeight: 600
+            }}
+          >
             ¿Quién es quién? 3D
           </h1>
-          <FilterButtons 
-            activeFilters={activeFilters}
-            onFilterToggle={handleFilterToggle}
+          <QuestionSystem 
+            onFiltersChange={handleFiltersChange}
           />
         </div>
       </div>
@@ -48,7 +50,7 @@ export default function WhoIsWho3DPage() {
           <directionalLight position={[10, 10, 5]} intensity={1} />
           <pointLight position={[-10, -10, -5]} intensity={0.5} />
           
-          <WhoIsWhoBoard activeFilters={activeFilters} onCardClick={handleCardClick} />
+          <WhoIsWhoBoard answers={answers} onCardClick={handleCardClick} />
           
           <OrbitControls 
             enablePan={false}
