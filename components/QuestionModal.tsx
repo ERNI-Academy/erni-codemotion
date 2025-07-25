@@ -92,7 +92,7 @@ export default function QuestionModal({
               fontSize: '1.2rem'
             }}
           >
-            Question {currentQuestionIndex + 1} of {totalQuestions}
+            Pregunta {currentQuestionIndex + 1} de {totalQuestions}
           </Typography>
           
           <IconButton
@@ -151,7 +151,7 @@ export default function QuestionModal({
                 lineHeight: 1.1 // Opcional: asegura que el texto no haga el botón más alto
               }}
             >
-              Yes
+              Sí
             </Button>
             <Button
               variant="contained"

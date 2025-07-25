@@ -14,11 +14,11 @@ export interface Question {
 }
 
 export const questions: Question[] = [
-  { id: 1, text: "Does your caricature wear glasses?", feature: CaricatureFeatures.GLASSES },
-  { id: 2, text: "Does your caricature have a beard?", feature: CaricatureFeatures.BEARD },
-  { id: 3, text: "Does your caricature have long hair?", feature: CaricatureFeatures.LONG_AIR },
-  { id: 4, text: "Does your caricature wear earrings?", feature: CaricatureFeatures.EARRINGS },
-  { id: 5, text: "Are you a man?", feature: CaricatureFeatures.MAN }
+  { id: 1, text: "¿Tu caricatura tiene gafas?", feature: CaricatureFeatures.GLASSES },
+  { id: 2, text: "¿Tu caricatura tiene barba?", feature: CaricatureFeatures.BEARD },
+  { id: 3, text: "¿Tu caricatura tiene el pelo largo?", feature: CaricatureFeatures.LONG_AIR },
+  { id: 4, text: "¿Tu caricatura tiene pendientes?", feature: CaricatureFeatures.EARRINGS },
+  { id: 5, text: "¿Eres un hombre?", feature: CaricatureFeatures.MAN }
 ];
 
 export const filterImagesBySequence = (images: CaricatureImage[], answers: boolean[]): CaricatureImage[] => {

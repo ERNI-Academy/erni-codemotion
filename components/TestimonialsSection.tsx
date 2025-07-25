@@ -44,7 +44,7 @@ const TestimonialCard: React.FC<TestimonialProps> = ({ videoUrl, quote, title })
       <div className="flex space-x-3">
         <div className="w-1 bg-[#033778] rounded-full"></div>
         <div className="flex-1">
-          <div className="text-[#033778] font-semibold not-italic">
+          <div className="text-[#033778] font-semibold not-italic text-xl md:text-1xl">
               {title}
           </div>
           <blockquote className="text-gray-700 text-lg leading-relaxed mb-2">
